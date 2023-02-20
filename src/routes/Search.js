@@ -1,16 +1,16 @@
 import { bookSearch } from "../until/api";
 import { useState, useEffect } from "react"
 
-const Search = (props) => {
-  const [text, setText] = useState("");
-  const [query, setQuery] = useState("");
+const Search = () => {
+  const [text, setText] = useState(""); //검색
+  const [query, setQuery] = useState(""); //검색어
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     if (query.length > 0) {
-      bookSearchHttpHandler(query, true);
+      bookSearchHttpHandler(query, true); // true 일 때 렌더링, false일 때는 검색된거 나타나지 않는다.
     }
-  }, [query]);
+  }, [query]); //검색어가 0이상 일때 검색어를 받아서 렌더링한다.
 
   const onEnter = e => {
     if (e.keyCode === 13) {
@@ -29,13 +29,11 @@ const Search = (props) => {
       page: 1, 
       size: 36
     };
-
+    
     const { data } = await bookSearch(params);
     if (reset) {
       setBooks(data.documents);
-    } else {
-      setBooks(books.concat(data.documents));
-    }
+    } 
   }
 
   return (
@@ -68,7 +66,6 @@ const Search = (props) => {
 };
 
 export const Item = (props) => {
-
   return(
       <div>
         <dl>
