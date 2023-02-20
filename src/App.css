@@ -21,6 +21,10 @@ a, button {
   box-shadow: none;
 }
 
+dt {
+  margin-bottom: 10px;
+}
+
 input {
   display: block;
   margin-bottom: 30px;

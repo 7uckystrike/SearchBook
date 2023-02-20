@@ -1,6 +1,5 @@
 import { bookSearch } from "../until/api";
 import { useState, useEffect } from "react"
-import "../App.css"
 
 const Search = () => {
   const [text, setText] = useState(""); //검색
@@ -49,26 +48,42 @@ const Search = () => {
           value={text}
         />
       </div>
+      <ul>
         <div className="search">
           {books.map((book, index) => (
-            <div
+            <Item
               key={index}
               thumbnail={book.thumbnail}
               title={book.title}
               url={book.url}
-              sale={book.sale_price}>
-                <div>
-                  <dl>
-                    <dt><img src={book.thumbnail}/></dt>
-                    <dd><strong>{book.title}</strong></dd>
-                    <dd><i>{book.sale_price}원</i></dd>
-                    <dd><a href={book.url} className="search_desc">상세정보</a></dd>
-                  </dl>
-                </div>
-              </div>
+              sale={book.sale_price}
+            />
           ))}
         </div>
+      </ul>
     </>
   );
 };
+
+export const Item = (props) => {
+  return(
+      <div>
+        <dl>
+          <dt>
+            <img src={props.thumbnail}/>
+          </dt>
+          <dd>
+            <div>
+              <strong>{props.title}</strong>
+              <br />
+              <p><i>{props.sale}원</i></p>
+              <a href={props.url} className="search_desc">상세정보</a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+  )
+}
+
+
 export default Search;
