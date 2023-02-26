@@ -8,7 +8,7 @@ https://book-lilac-two.vercel.app
 <br />
 
 ### History
-https://gold-carrot.tistory.com/17
+🚜 <a href="https://jyounge.notion.site/search-book-react-b3ed25b3324c4b0d89baa0d09d65f9ec">작업일지</a>
 
 <br />
 
