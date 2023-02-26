@@ -32,4 +32,4 @@ https://gold-carrot.tistory.com/17
 <br />
 
 ### Preview
-<img src="https://im.ezgif.com/tmp/ezgif-1-f032bd41cd.gif" />
+<img src="https://github.com/7uckystrike/search-book/blob/main/preview/preview.gif?raw=true" />
